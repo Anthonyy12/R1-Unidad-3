@@ -1,0 +1,127 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card">
+                <div class="card-body text-center">
+                    <span class="titulo">Registro</span>
+                    <form class="mt-3 row g-2" [formGroup]="usuarioForm" (ngSubmit)="registrarUsuario()">
+                        <div class="col-md-6">
+                          <label class="form-label">Nombre</label>
+                          <input type="text" formControlName="nombre"
+                           class="form-control" placeholder="Nombre">
+                            <div class="text-danger"
+                            *ngIf="usuarioForm.get('nombre')?.hasError('required') && usuarioForm.get('nombre')?.touched">
+                                <span><strong>Obligatorio*</strong></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Apellido</label>
+                            <input type="text" formControlName="apellido"
+                            class="form-control" placeholder="Apellido">
+                            <div class="text-danger"
+                            *ngIf="usuarioForm.get('apellido')?.hasError('required') && usuarioForm.get('apellido')?.touched">
+                                <span><strong>Obligatorio*</strong></span>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label">Edad</label>
+                            <input type="text" formControlName="edad"
+                            class="form-control" placeholder="Edad">
+                            <div class="text-danger"
+                            *ngIf="usuarioForm.get('edad')?.hasError('required') && usuarioForm.get('edad')?.touched">
+                                <span><strong>Obligatorio*</strong></span>
+                            </div>
+                        </div>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-3">
+                            <label class="form-label">Genero</label>
+                            <select class="form-select" formControlName="genero"
+                            class="form-control">
+                                <option selected disabled value="">Escoge...</option>
+                                <option>Masculino</option>
+                                <option>Femenino</option>
+                                <option>Otro</option>
+                            </select>
+                            <div class="text-danger"
+                            *ngIf="usuarioForm.get('genero')?.hasError('required') && usuarioForm.get('genero')?.touched">
+                                <span><strong>Obligatorio*</strong></span>
+                            </div>
+                          </div>
+                          <div class="col-md-1"></div>
+                          <div class="col-md-5">
+                            <label class="form-label">Correo</label>
+                            <input type="text" formControlName="correo"
+                            class="form-control" placeholder="ejemplo@ejemplo.com">
+                            <div class="text-danger"
+                            *ngIf="usuarioForm.get('correo')?.hasError('required') && usuarioForm.get('correo')?.touched">
+                                <span><strong>Obligatorio*</strong></span>
+                            </div>
+                          </div>
+                          <div class="col-md-5">
+                            <label class="form-label">Teléfono</label>
+                            <input type="text" formControlName="telefono"
+                            class="form-control">
+                            <div class="text-danger"
+                            *ngIf="usuarioForm.get('telefono')?.hasError('required') && usuarioForm.get('telefono')?.touched">
+                                <span><strong>Obligatorio*</strong></span>
+                            </div>
+                          </div>
+                          <div class="col-md-2"></div>
+                          <div class="col-md-5">
+                            <label class="form-label">Ciudad</label>
+                            <select class="form-select" formControlName="ciudad"
+                            class="form-control">
+                                <option selected disabled value="">Escoge...</option>
+                                <option>Dolores Hidalgo</option>
+                                <option>Celaya</option>
+                                <option>Leon</option>
+                                <option>San Miguel de Allende</option>
+                                <option>Queretaro</option>
+                            </select>
+                            <div class="text-danger"
+                            *ngIf="usuarioForm.get('ciudad')?.hasError('required') && usuarioForm.get('ciudad')?.touched">
+                                <span><strong>Obligatorio*</strong></span>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <label class="form-label">Cargo</label>
+                            <select class="form-select" formControlName="cargo"
+                            class="form-control">
+                                <option selected disabled value="">Escoge...</option>
+                                <option>Desarrollador</option>
+                                <option>Gerente</option>
+                                <option>Recursos humanos</option>
+                                <option>Analista financiero</option>
+                                <option>Jefe de ventas</option>
+                            </select>
+                            <div class="text-danger"
+                            *ngIf="usuarioForm.get('cargo')?.hasError('required') && usuarioForm.get('cargo')?.touched">
+                                <span><strong>Obligatorio*</strong></span>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <label class="form-label">Área de interés</label>
+                            <select class="form-select" formControlName="area"
+                            class="form-control">
+                                <option selected disabled value="">Escoge...</option>
+                                <option>Tecnología</option>
+                                <option>Sostenibilidad</option>
+                                <option>Emprendimiento</option>
+                                <option>Creatividad</option>
+                                <option>Desarrollo personal</option>
+                            </select>
+                            <div class="text-danger"
+                            *ngIf="usuarioForm.get('area')?.hasError('required') && usuarioForm.get('area')?.touched">
+                                <span><strong>Obligatorio*</strong></span>
+                            </div>
+                          </div>
+                          <div class="md-3">
+                            <button type="submit" class="btn btn-success float-end">Registrarse</button>
+                            <button routerLink="/" class="btn btn-danger float-start">Volver</button>
+                          </div>
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
